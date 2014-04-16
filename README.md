@@ -1,2 +1,0 @@
-Ducky-chrome-password-stealer
-=============================
